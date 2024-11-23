@@ -89,3 +89,46 @@ kubectl get secret database -n default -o yaml
 - Only the Sealed Secrets controller in your cluster can decrypt the secrets.
 - The `kubeseal` CLI tool is used to encrypt secrets.
 - The `kubectl` command is used to apply the sealed secret to the cluster.
+
+
+## **Benefits of Sealed Secrets**
+
+1. **Secure Storage in Version Control**:  
+   Secrets are encrypted before being committed to Git, enabling secure GitOps workflows.
+
+2. **Encryption at Rest**:  
+   Secrets are protected by the Sealed Secrets controller's private key, ensuring strong encryption.
+
+3. **Kubernetes Native Integration**:  
+   Seamlessly integrates with Kubernetes resources, creating standard `Secret` objects after decryption.
+
+4. **Ease of Use**:  
+   Simple deployment with Helm charts and user-friendly encryption/decryption using the `kubeseal` CLI tool.
+
+5. **Auditability**:  
+   Encrypted secrets stored in version control provide a clear history of changes for audit purposes.
+
+6. **Cluster-Specific Encryption**:  
+   Secrets are bound to a specific cluster, enhancing security by making them unusable outside the intended environment.
+
+7. **Key Rotation Support**:  
+   Automatic re-encryption of secrets when private keys are rotated, ensuring secure lifecycle management.
+
+---
+
+## **Limitations of Sealed Secrets**
+
+1. **Controller Dependency**:  
+   Requires the Sealed Secrets controller to be running for decrypting secrets. If the controller is unavailable, secrets cannot be accessed.
+
+2. **Single-Cluster Usability**:  
+   Encrypted secrets are cluster-specific and cannot be reused across clusters without re-encryption.
+
+3. **No Dynamic Secret Management**:  
+   Unlike tools like HashiCorp Vault, it does not support dynamic generation of secrets such as database credentials.
+
+4. **Limited Access Control**:  
+   Relies on Kubernetes RBAC for access management, lacking advanced policy control seen in dedicated secret management tools.
+
+5. **Risk of Key Loss**:  
+   Losing the controller's private key renders encrypted secrets unusable, making backups of the key critical.
