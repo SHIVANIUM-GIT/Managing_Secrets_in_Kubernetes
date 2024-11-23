@@ -1,5 +1,9 @@
 # Sealed Secrets
 
+![architecture](<Screenshot from 2024-11-23 15-05-11.png>)
+
+
+
 
 # **Managing Secrets with Sealed Secrets in Kubernetes**
 
