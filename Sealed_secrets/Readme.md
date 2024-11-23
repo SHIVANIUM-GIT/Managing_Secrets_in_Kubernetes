@@ -42,7 +42,7 @@ kubectl create secret generic database -n default --from-literal=DB_PASSWORD=pas
 
 # the secret.yaml secret is encoded 
 
-```bash
+```yaml
 apiVersion: v1
 data:
   DB_PASSWORD: cGFzc3dvcmRfMTIz
