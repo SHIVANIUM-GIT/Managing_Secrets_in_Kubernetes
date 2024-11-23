@@ -2,9 +2,6 @@
 
 ![architecture](<Screenshot from 2024-11-23 15-05-11.png>)
 
-
-
-
 # **Managing Secrets with Sealed Secrets in Kubernetes**
 
 This guide explains how to securely manage Kubernetes secrets using Sealed Secrets. It includes steps for installation, creating, encrypting, and decrypting secrets, as well as applying them to a cluster.
