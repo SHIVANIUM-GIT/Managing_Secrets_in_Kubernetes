@@ -3,7 +3,7 @@
 
 # **Comparison: Sealed Secrets vs. External Secrets Operator (ESO)**
 
-When managing secrets in Kubernetes, both **Sealed Secrets** and **External Secrets Operator (ESO)** offer unique features and benefits. Here's a detailed comparison to help choose the right solution for your use case.
+When managing secrets in Kubernetes, both **Sealed Secrets** and **External Secrets Operator (ESO)** offer unique features and benefits.
 
 ---
 
@@ -18,7 +18,7 @@ Sealed Secrets encrypt secrets and allow them to be stored securely in version c
 - **No External Dependencies**: Does not require third-party secret stores or cloud services.  
 
 ### **Limitations**  
-- **Static Secrets**: Secrets are encrypted and stored; they do not dynamically update when the source secret changes.  
+- **Static Secrets**: Secrets are encrypted and stored. they do not dynamically update when the source secret changes.  
 - **Cluster Dependency**: Secrets are bound to the specific cluster where the controller is running. Migrating secrets to a new cluster requires exporting the private key.  
 - **Limited Scope**: Suitable primarily for GitOps workflows rather than runtime dynamic secret fetching.  
 
@@ -59,14 +59,25 @@ ESO integrates Kubernetes with external secret managers like AWS Secrets Manager
 ---
 
 ## **When to Use Sealed Secrets**
-- You prefer to manage secrets declaratively using GitOps workflows.  
-- You do not need dynamic updates to secrets at runtime.  
-- You want a lightweight solution without external dependencies.  
+- I prefer to manage secrets declaratively using GitOps workflows.  
+- I do not need dynamic updates to secrets at runtime.  
+- I want a lightweight solution without external dependencies.  
 
 ## **When to Use External Secrets Operator**
-- You need dynamic secret updates in Kubernetes.  
-- You already use or plan to use a third-party secret manager like AWS Secrets Manager.  
-- Your infrastructure spans multiple clouds or hybrid environments.  
+- I need dynamic secret updates in Kubernetes.  
+- I already use or plan to use a third-party secret manager like AWS Secrets Manager.  
+- when infrastructure spans multiple clouds or hybrid environments.  
+
+
+## **When to Use Sealed Secrets**
+- Prefer to manage secrets declaratively using GitOps workflows.  
+- Do not need dynamic updates to secrets at runtime.  
+- Want a lightweight solution without external dependencies.  
+
+## **When to Use External Secrets Operator**
+- Need dynamic secret updates in Kubernetes.  
+- Already use or plan to use a third-party secret manager like AWS Secrets Manager.  
+- Infrastructure spans multiple clouds or hybrid environments.  
 
 ---
 
