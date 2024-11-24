@@ -47,15 +47,15 @@ EOF
 
 ```
 
-# exit 
-```bash
-exit
-```
-
 # create a Kubernetes authentication role named database that binds this policy with a Kubernetes service account named
 
 ```bash
 vault write auth/kubernetes/role/database bound_service_account_names=webapp-sa bound_service_account_namespaces=default policies=internal-app ttl=20m
+```
+
+# exit 
+```bash
+exit
 ```
 
 
@@ -92,14 +92,14 @@ kubectl create serviceaccount webapp-sa
 # install the webapp 
 
 ```yaml
-apiVersion: v1
 kind: Pod
+apiVersion: v1
 metadata:
   name: webapp
 spec:
-  serviceAccountName: vault-sa
+  serviceAccountName: webapp-sa
   containers:
-  - image: nginx:latest
+  - image: jweissig/app:0.0.1
     name: webapp
     volumeMounts:
     - name: secrets-store-inline
