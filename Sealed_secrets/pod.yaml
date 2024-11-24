@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-app
+  template:
+    metadata:
+      labels:
+        app: demo-app
+    spec:
+      containers:
+      - name: example-container
+        image: nginx
+        volumeMounts:
+        - name: secret-volume
+          mountPath: "/temp"
+          readOnly: true
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: database

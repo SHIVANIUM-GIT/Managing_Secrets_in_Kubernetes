@@ -96,6 +96,39 @@ kubectl get secret database -n default -o yaml
 
 ---
 
+# create the POD to mouth the secret
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-app
+  template:
+    metadata:
+      labels:
+        app: demo-app
+    spec:
+      containers:
+      - name: example-container
+        image: nginx
+        volumeMounts:
+        - name: secret-volume
+          mountPath: "/temp"
+          readOnly: true
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: database
+```
+
+
+
 ## **Summary**
 - Sealed Secrets ensures the secure management of secrets by encrypting them before storing in version control.
 - Only the Sealed Secrets controller in your cluster can decrypt the secrets.
