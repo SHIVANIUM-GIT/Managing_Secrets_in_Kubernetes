@@ -119,18 +119,19 @@ spec:
         image: nginx
         volumeMounts:
         - name: secret-volume
-          mountPath: "/"
+          mountPath: "/etc/secrets"
           readOnly: true
       volumes:
       - name: secret-volume
         secret:
           secretName: database
+
 ```
 
 # verify the secret
 ```bash
 kubectl exec -it <pod-name> -- /bin/sh
-cat temp/DB_PASSWORD
+cat /etc/secrets/DB_PASSWORD
 ```
 
 ## **Summary**

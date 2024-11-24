@@ -81,6 +81,38 @@ kubectl apply -f External-secret.yaml
 kubectl get secret kube-secret -o yaml
 ```
 
+# mouth the secrets in the pod
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-pod
+  namespace: default
+spec:
+  containers:
+    - name: demo-container
+      image: nginx
+      volumeMounts:
+        - name: secret-volume
+          mountPath: "/etc/secrets"
+          readOnly: true
+  volumes:
+    - name: secret-volume
+      secret:
+        secretName: kube-secret
+```
+   
+```bash
+kubectl apply -f pod.yaml
+
+```
+
+# verify the mouth 
+```bash
+kubectl exec -it example-pod -- cat etc/secrets/my_DB
+```
+
 ## **Benefits of External Secrets Operator**
 
 1. **Dynamic Secret Management**:  
