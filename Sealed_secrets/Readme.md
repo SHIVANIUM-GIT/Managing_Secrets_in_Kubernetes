@@ -119,7 +119,7 @@ spec:
         image: nginx
         volumeMounts:
         - name: secret-volume
-          mountPath: "/temp"
+          mountPath: "/"
           readOnly: true
       volumes:
       - name: secret-volume
@@ -127,7 +127,11 @@ spec:
           secretName: database
 ```
 
-
+# verify the secret
+```bash
+kubectl exec -it <pod-name> -- /bin/sh
+cat temp/DB_PASSWORD
+```
 
 ## **Summary**
 - Sealed Secrets ensures the secure management of secrets by encrypting them before storing in version control.
