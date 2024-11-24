@@ -3,6 +3,7 @@
 Your setup process for **External Secrets Operator (ESO)** looks good, and it should work with a few adjustments to make sure everything is properly configured.
 
 ---
+![ESO](image.png)
 
 # Install External Secrets Operator using Helm
 
