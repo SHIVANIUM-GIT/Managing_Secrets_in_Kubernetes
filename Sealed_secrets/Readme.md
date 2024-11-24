@@ -12,7 +12,7 @@ Add the Sealed Secrets Helm repository and install the Sealed Secrets controller
 
 ```bash 
 helm repo add sealed-secrets https://bitnami-labs.github.io/sealed-secrets
-helm install my-release sealed-secrets/sealed-secrets -n kube-system
+helm install my-release sealed-secrets/sealed-secrets -n sealed-secrets --create-namespace
 ```
 ---
 
@@ -29,14 +29,14 @@ sudo install -m 755 kubeseal /usr/local/bin/kubeseal
 # name of the --controller-name
 
 ```bash
-kubectl get svc -n kube-system
+kubectl get svc -n sealed-secrets
 ```
 ---
 
 # connect to kubeseal with cluster
 
 ```bash
-kubeseal --fetch-cert --controller-name my-release-sealed-secrets  --controller-namespace kube-system
+kubeseal --fetch-cert --controller-name my-release-sealed-secrets  --controller-namespace sealed-secrets
 ```
 ---
 
