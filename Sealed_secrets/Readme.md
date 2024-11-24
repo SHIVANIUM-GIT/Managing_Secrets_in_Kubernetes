@@ -26,6 +26,13 @@ sudo install -m 755 kubeseal /usr/local/bin/kubeseal
 ```
 ---
 
+# name of the --controller-name
+
+```bash
+kubectl get svc -n kube-system
+```
+---
+
 # connect to kubeseal with cluster
 
 ```bash
