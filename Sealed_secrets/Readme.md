@@ -66,7 +66,12 @@ metadata:
 ```bash
 echo 'cGFzc3dvcmRfMTIz' | base64 --decode
 ```
+---
 
+# apply the secret in the cluster
+```bash
+kubectl apply -f secert.yaml
+```
 ---
 
 #  Encrypt the Secret with Sealed Secrets
