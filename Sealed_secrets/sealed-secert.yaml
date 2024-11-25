@@ -1,0 +1,15 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: database
+  namespace: default
+spec:
+  encryptedData:
+    DB_PASSWORD: AgBS9Q7S7QCmohLNaZb5VfG6QfiYFtopHOxgcssKULDHQ+i1XQHhtHvcII45sOaR4ZJZEDnOwUTGjwtdfuEoY9apzpaFraNCfyysz8R7NYEm/fWj8Urn7hONXNSo21xU/L/VT+lkD205mIyrr4ds/oECabm7Ww4wTJYEn34VqzSYXEnudulQ1V4HwiEMr9PjSx+lc9GGmruzaeiSNU0zqboRAF7P1OYcLMoYcnRHwnBqCeNY3wzA6+4eSKBjcy5a4zbDeJuEZJ2+lX/imS676h2ZSE0Q9wInLoyhLsvW/H20A1bjCyvBWsDtjynW3+UfEv30CH/gpYjLzf8hWLrUTv/0NAStVz0UQ60uE2hf2Mp84ewqcVdQMfiVZmCnD65YUp9piehu+pkQgAsbllv5IZLe748eA8HtY/kYkGawfpKOV5djLuML758ks4xZNdL6/Vw38VSh9sAuLhVWxYuKizC2i0UNX5RSn1cPrXA8+PQp3mfSzptM1lHkUeb7r9htNOyL2m+gj+BPyXV30Npfk3j1yr6lc070Xrb7lqs4tot8a43++tqC7jD+zVC8C9kJmB2u51yTWX+NqClgdqIWtjD1Iq0Q4dUtU+Ey4Ud2EDXKvKAJgNdHGLTe6O4ot496L6FRoOi8AFTdOlTaEonpAA9iSkFM3FCAF7ME+6YPqCH6O/6/6qby38/rDWjrXw/XiqXqUgzshu5WcmBDPK8=
+  template:
+    metadata:
+      creationTimestamp: null
+      name: database
+      namespace: default

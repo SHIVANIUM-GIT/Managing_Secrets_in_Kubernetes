@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-pod
+  namespace: default
+spec:
+  containers:
+    - name: demo-container
+      image: nginx
+      volumeMounts:
+        - name: secret-volume
+          mountPath: "/etc/secrets"
+          readOnly: true
+  volumes:
+    - name: secret-volume
+      secret:
+        secretName: kube-secret
