@@ -43,7 +43,7 @@ kubeseal --fetch-cert --controller-name my-release-sealed-secrets  --controller-
 # create the sealed secret 
 
 ```bash
-kubectl create secret generic database -n default --from-literal=DB_PASSWORD=password_123 --dry-run=client -o yaml > secert.yaml 
+kubectl create secret generic database -n default --from-literal=DB_PASSWORD=enterthepassword --dry-run=client -o yaml > secert.yaml 
 ```
 ---
 
@@ -52,7 +52,7 @@ kubectl create secret generic database -n default --from-literal=DB_PASSWORD=pas
 ```yaml
 apiVersion: v1
 data:
-  DB_PASSWORD: cGFzc3dvcmRfMTIz
+  DB_PASSWORD: ZW50ZXJ0aGVwYXNzd29yZA==
 kind: Secret
 metadata:
   creationTimestamp: null
@@ -64,7 +64,7 @@ metadata:
 
 # Decode the Base64-Encoded Secret (Optional)
 ```bash
-echo 'cGFzc3dvcmRfMTIz' | base64 --decode
+echo 'ZW50ZXJ0aGVwYXNzd29yZA==' | base64 --decode
 ```
 ---
 
