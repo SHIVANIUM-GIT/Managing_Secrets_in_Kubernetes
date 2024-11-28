@@ -43,7 +43,7 @@ kubeseal --fetch-cert --controller-name my-release-sealed-secrets  --controller-
 # create the sealed secret 
 
 ```bash
-kubectl create secret generic database -n default --from-literal=DB_PASSWORD=enterthepassword --dry-run=client -o yaml > secert.yaml 
+kubectl create secret generic database -n default --from-literal=DB_PASSWORD=enterthepassword --dry-run=client -o yaml > secret.yaml 
 ```
 ---
 
