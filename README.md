@@ -1,7 +1,3 @@
-Certainly! Here's an updated version of the comparison that also includes the **CSI Driver** for managing secrets in Kubernetes:
-
----
-
 # **Managing Secrets in Kubernetes**
 
 ## **Comparison: Sealed Secrets vs. External Secrets Operator (ESO) vs. CSI Driver**
